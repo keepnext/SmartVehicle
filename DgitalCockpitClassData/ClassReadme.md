@@ -1,19 +1,90 @@
-#Digital Cockpit System of the Smart Vehicle IT System
+# Digital Cockpit System of the Smart Vehicle IT System
 ## 일반개요
-- What: Education Tutorial Class
-- When: 2020년 1월 중순부터 2월중순까지 1달간 12일 수업 및 실습
-- Where: HancomMDS in Pankyo(H-Tower)
-- Who: keepnext외 20여명(강사: 한양대학교 최문원교수)
-- Why: SmartCar 관련 지식배양 및 개발 전문가 과정을 통해서
-- How: 주어진 교육기간내 강의와 실습을 통해서 이해도를 향상시킴
+   - What: Education Tutorial Class
+   - When: 2020년 1월 중순부터 2월중순까지 1달간 12일 수업 및 실습
+   - Where: HancomMDS in Pankyo(H-Tower)
+   - Who: keepnext외 20여명(강사: 한양대학교 최문원교수)
+   - Why: SmartCar 관련 지식배양 및 개발 전문가 과정을 통해서
+   - How: 주어진 교육기간내 강의와 실습을 통해서 이해도를 향상시킴
 
-# 교육과정 전반 목차
+# 프로젝트 전반 목차
+## Cover
+   - MainTitle:Development of the Digital Cockpit Solution for Smart Car
+   - SubTitle: Education & Practice
+## Contents:
+   - Part 01. Overview
+   - Part 02. Design Thining Process
+   - Part 03. Project Management
+   - Part 04. Software Development Engineering
+   - Part 05. WrapUp
+   - Part 10. Appendix[Eduation, Tutorial, Excersize]
+
+### Part 1. Overview
+Ch01. Megatrend
+  1. Industry Review
+  2. Smart Vehicle
+  3. Digital Cockpit
+Ch02. Background and Approach
+  1. Needs
+  2. Issues & Problem
+  3. Solution
+
+### Part 2. Design Thinking
+Ch01 Empatize 
+Ch02 Ideate
+Ch03 Design
+Ch04 
+Ch05 Test
+
+### Part 3. Project Management(PMBOK)
+Ch01 Project Overview
+Ch02 Project Scope
+Ch03 Project Schedule
+Ch04 Project Cost
+Ch05 Project Quality
+Ch06 Project Human Resource
+Ch07 Project Communication
+Ch08 Project Risk
+Ch09 Project Procurement
+Ch10 Project Statkeholders
+Ch11 Project Integration
+
+
+### Part 4. Software Engineering [Development]
+Ch01
+Ch02
+Ch03
+Ch04
+Ch05 
+
+### Part 5. Warp Up
+Ch01 Summary & Review
+Ch02 Conclutions
+Ch03 Insights(Lessons learnt)
+Ch04 Future Works
+
+# 교육훈련 커리큘럼
+   - 스마트카 전반개요(강의)
+   - 운영체제: Linux::[우분투] (강의)
+   - 프로그래밍언어::[C/CPP] (강의)
+   - 프레임워크: 소프트웨어GUI분야::[Qt] (강의)
+   - 프레임워크: 컴퓨터비전 분야::[OpenCV] (강의)
+   - 프레임워크: 병렬처리 분야::[Cuda] (강의) 
+
 ## 스마트카 전반개요(강의)
 
 
+### Part 2. Education & Tutorial
+Ch01 Overview
+Ch02 Installation & Setup
+Ch03 Main OS: Windows10
+Ch04 Virtual Machine:JVM
+Ch05 SubOS: Linux: Ubuntu
+Ch06 C/C++ Programming
+Ch07 Qt Programming, #Qt Creater
+Ch08 Device Control Programming: Vnc viewer
 
 ## 스마트카 콕핏 개발(실습)
-
 
 
 ## 스마트카 디지털 콕핏 프로젝트(개발) 
@@ -94,7 +165,7 @@
 - ~/Desktop/class/xycar/lidar_sdk/rplidar_sdk-release-v1.11.0/sdk
 - ~/Desktop/class/xycar/lidar_sdk/rplidar_sdk-release-v1.11.0/sdk/output/Linux/Release
 
-### VNC화면에 카봇의 디바이스 찾아보는 명령여: 
+### VNC화면에 카봇의 디바이스 찾아보는 명령어: 
 - ls /dev/tty* 형태
 - ./ultra_simple /dev/ttyUSB1
 
@@ -108,11 +179,63 @@
 - gcc -o serve+r server.c -lpthread
 
 ### 장치별 tty 명칭
-- 모터제어기     ttyACM(번호)
-- IMU           ttyACM(번호)
-- 라이다        ttyUSB(번호)
-- 초음파        ttyUSB(번호)
-- 카메라        Video0 <- 장치가 1개
+1. 모터제어기
+  - VESC Device, BLDC Motor; 192.168.101.11 port 9001
+  - 모터제어기  ./bldc /dev/ttyACM(번호)
+  - 소스코드 수정 및 컴파일
+  - gcc -o main main.cpp
+   
+2. 초음파        ttyUSB(번호)
+   - 1.2 USS Device, UltraSonicSensor; port 9002
+   - ./uss /dev/ttyUSB1
+
+3. 라이다        ttyUSB(번호)
+   - Lidar Device; port 9004
+   - lidar code 위치: SDK\APP\ultra_simple\이곳에 카피
+	- 컴파일 방법: main.cpp 코드와 이름을 바꾼후 make
+	- 명령어: gcc -o main main.cpp 하면 실행파일 main 생성
+   - 실행위치: SDK\output\Linux\Release\
+   - 실행방법: ./ultra_simple /dev/ttyUSB2
+   - 소스코드 수정후 컴파일
+
+4. IMU           ttyACM(번호)
+   - IMU Device, Inertial Measurement Unit; port 9003
+   - imu.c
+   - Source coding
+      // socket/serial 관련 변수 선언
+      // server socket 생성
+      // server socket 바인딩
+      // server socket listen
+      // server socket accept
+
+   - Qt에서 접속, 접속요청시 clientfd에 socket 할당
+      // serial 연결 소스
+      //7. 반복문 내부에 socket write 문 추가
+
+   - 자세감지기 소스 imc.c는  serial_sample.c와 server.c 코드 참고하여 작성
+
+   - 소스코드가 수정완료되면, 컴파일 gcc -o imu imu.c
+
+   - imu device 실행명령
+      - ./imu /dev/ttyUSB2
+   - 디바이스 확인방법: 파란LED 켜지면 정상 동작
+   - 실행화면 크기조절 방법
+      xrandr --fb 1400x700
+   Qt Creater에서 프로젝트 생성,
+   ui Form 만들고
+   코드와 연동한다음
+   화면에서 ip(192.168.101.11)와 port(9003) 입력
+   확인
+   imu3d.c
+
+5. 카메라
+   - Video0 <- 장치가 1개
+   - Camera Device; port 9005
+      - ./camera /dev/video0
+6. Digital Cluster
+7. V2V Simulator
+8. Application Project
+   8.1 Management Dashboard
 
 ### VNC 화면 크기 변경
 - xrandr --fb 1400x700
@@ -130,7 +253,30 @@
 - 실행 위치: SDK\output\Linux\Release\
 - 실행 방법 ./ultra_simple /dev/ttyUSB(번호)
 
-
+## Project
+- Qt Creater 통합개발툴에서 작업
+- Project Creater: code/project/cockpit
+- File and Directory Structure
+   cockpit
+   - cockpit.pro
+   - Headers
+      - bldc.h
+      - imu.h
+      - lidar.h
+      - uss.h
+      - camera.h
+   - Sources
+      - imu.cpp
+      - imu3d.cpp
+      - bldc.cpp
+      - camera.cpp
+      - uss.cpp
+   - Form
+      - bldc.ui
+      - imu.ui
+      - lidar.ui
+      - camera.ui
+      - uss.ui
 
 
 
