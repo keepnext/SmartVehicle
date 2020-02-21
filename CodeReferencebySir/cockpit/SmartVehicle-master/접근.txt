@@ -1,0 +1,4 @@
+sudo gpasswd -a class vboxsf
+
+공유폴더 접근 설정
+터미널을 켜고 위 명령어 입력

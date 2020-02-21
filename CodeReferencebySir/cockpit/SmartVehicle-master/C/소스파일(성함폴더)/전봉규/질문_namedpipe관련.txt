@@ -1,0 +1,18 @@
+1. 쉘을 2개 열어서, 각각 2_namedpipe_rd과 3_namedpipe_wr를 실행하면 정상
+2. 하나의 쉘에서 
+1) ./3_namedpipe_wr & 2_namedpipe_rd는 정상
+실행예)
+[2] 7143
+sended
+Hello from PID 7143 
+sended
+Hello from PID 7143 
+sended
+Hello from PID 7143 
+sended
+Hello from PID 7143 
+[2]+  완료  
+
+2) 2_namedpipe_rd & ./3_namedpipe_wr는 비정상인 이유는?
+실행예)
+[2] 7146

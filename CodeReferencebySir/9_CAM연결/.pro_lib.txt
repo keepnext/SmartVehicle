@@ -1,0 +1,5 @@
+INCLUDEPATH += /home/class/opencv-3.4.5/include
+
+
+
+LIBS += -L/home/class/opencv-3.4.5/build/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc

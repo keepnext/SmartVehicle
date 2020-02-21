@@ -1,0 +1,6 @@
+VNC
+https://www.realvnc.com/en/connect/download/viewer/
+
+
+참고소스
+https://drive.google.com/open?id=1vS2Yih5ff1IIF81vPjscGERS2GiR6Amy

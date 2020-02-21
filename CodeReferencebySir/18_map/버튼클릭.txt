@@ -1,0 +1,16 @@
+void Widget::move1()
+{
+    view->page()->runJavaScript("moveto(127.0347583,37.4992707);",[this](const QVariant &v)
+        {
+            qDebug()<<v.toString();
+        }
+    );
+}
+void Widget::move2()
+{
+    view->page()->runJavaScript("moveto(127.0342583,37.4992700);",[this](const QVariant &v)
+        {
+            qDebug()<<v.toString();
+        }
+    );
+}
