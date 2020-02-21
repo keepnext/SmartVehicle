@@ -1,0 +1,1 @@
+/usr/bin/g++   -g   CMakeFiles/cockpit.dir/main.cpp.o CMakeFiles/cockpit.dir/widget.cpp.o CMakeFiles/cockpit.dir/cockpit_automoc.cpp.o  -o cockpit /home/class/Qt5.12.6/5.12.6/gcc_64/lib/libQt5Widgets.so.5.12.6 /home/class/Qt5.12.6/5.12.6/gcc_64/lib/libQt5Gui.so.5.12.6 /home/class/Qt5.12.6/5.12.6/gcc_64/lib/libQt5Core.so.5.12.6 -Wl,-rpath,/home/class/Qt5.12.6/5.12.6/gcc_64/lib 

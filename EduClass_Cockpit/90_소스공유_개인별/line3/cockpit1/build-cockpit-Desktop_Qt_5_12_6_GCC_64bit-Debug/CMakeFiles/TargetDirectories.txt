@@ -1,0 +1,4 @@
+/home/class/code/QT/cockpit1/build-cockpit-Desktop_Qt_5_12_6_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/class/code/QT/cockpit1/build-cockpit-Desktop_Qt_5_12_6_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/class/code/QT/cockpit1/build-cockpit-Desktop_Qt_5_12_6_GCC_64bit-Debug/CMakeFiles/cockpit.dir
+/home/class/code/QT/cockpit1/build-cockpit-Desktop_Qt_5_12_6_GCC_64bit-Debug/CMakeFiles/cockpit_automoc.dir

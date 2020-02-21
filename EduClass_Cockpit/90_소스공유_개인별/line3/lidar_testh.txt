@@ -1,0 +1,12 @@
+#ifndef LIDAR_TEST_H
+#define LIDAR_TEST_H
+
+#include <QWidget>
+
+class lidar_test :public QWidget
+{
+public:
+    lidar_test(QWidget* parent = nullptr);
+};
+
+#endif // LIDAR_TEST_H

@@ -1,0 +1,7 @@
+#include "lidar_test.h"
+
+lidar_test::lidar_test(QWidget* parent)
+    : QWidget(parent)
+{
+
+}

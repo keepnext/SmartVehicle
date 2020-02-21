@@ -1,0 +1,16 @@
+// 영상값 수신
+        QByteArray readData = tcpSocket->readAll();
+        imgByte.append(readData);
+        ui->value->setText("현재시간 : " + QTime::currentTime().toString() + "," + QString::number(readData.count()));
+        if(imgByte.count() >= 480 * 640 * 3)
+        {
+            cv::Mat tmp(480, 640, CV_8UC3, imgByte.data());
+            img = tmp.clone();
+            imgByte.remove(0, 480*640*3);
+
+            QImage image( img.data,
+                          img.cols, img.rows,
+                          static_cast<int>(img.step),
+                          QImage::Format_RGB888 );
+            ui->sensor->setPixmap(QPixmap::fromImage(image));
+        }

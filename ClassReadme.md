@@ -201,11 +201,21 @@ Sensor System
 - ls -l 후 확인
 - ./ultra_simple /dev/ttyUSB1
 
-### 소켓 컴파일
+### 소켓 컴파일 방법
 - gcc -o client client.c -lpthread
 - gcc -o serve+r server.c -lpthread
 
-### 장치별 tty 명칭
+## 장치별 tty 명칭
+[XyCar 다운로드 20200214일 기준: 구글드라이버](https://drive.google.com/open?id=11yZHH6QINVS30-hSSnI-Y6y3b2rUwxUO)
+[Motor, Cam 다운로드 링크: 구글드라이버](https://drive.google.com/open?id=13zR2H0Wrz0hDC5yp2G5j0MeoUhzwFWtg)
+[VNC 다운로드: Realvnc 사이트](https://www.realvnc.com/en/connect/download/viewer/)
+[참고소스: 구글드라이버](https://drive.google.com/open?id=1vS2Yih5ff1IIF81vPjscGERS2GiR6Amy)
+
+
+[컴파일]
+gcc -c main.c bldc_interface.c bldc_interface_uart.c buffer.c comm_uart.c crc.c packet.c timers.c
+gcc -o main  main.o bldc_interface.o bldc_interface_uart.o buffer.o comm_uart.o crc.o packet.o timers.o -lrt ptrhead
+
 1. 모터제어기
   - VESC Device, BLDC Motor; 192.168.101.11 port 9001
   - 모터제어기  ./bldc /dev/ttyACM(번호)
